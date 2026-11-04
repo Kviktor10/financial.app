@@ -1,0 +1,10 @@
+{
+  "name": "mercado-financas-local",
+  "version": "1.4.0",
+  "private": true,
+  "type": "module",
+  "description": "Aplicativo local de supermercado e controle financeiro em HTML, CSS e JavaScript.",
+  "scripts": {
+    "test": "node tests/smoke.test.mjs && node tests/ui.test.mjs && node tests/recovery.test.mjs"
+  }
+}

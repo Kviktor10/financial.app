@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1712">
+  <meta name="app-version" content="1.4.0">
+  <meta name="description" content="Aplicativo local para compras de supermercado e controle financeiro pessoal.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <title>Mercado & Finanças</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=1.4.0">
+</head>
+<body>
+  <div id="appShell" class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-mark">M<span>+</span></div>
+        <div><strong>Mercado & Finanças</strong><small>Controle pessoal</small></div>
+      </div>
+      <div class="nav-caption">VISÃO GERAL</div>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">▦</span><span>Dashboard</span></button>
+        <button class="nav-item" data-view="shopping"><span class="nav-icon">🛒</span><span>Caixa / Compras</span></button>
+        <button class="nav-item" data-view="products"><span class="nav-icon">▤</span><span>Produtos</span></button>
+        <div class="nav-caption nav-caption-spaced">FINANCEIRO</div>
+        <button class="nav-item" data-view="finance"><span class="nav-icon">◉</span><span>Movimentações</span></button>
+        <button class="nav-item" data-view="calendar"><span class="nav-icon">▦</span><span>Calendário</span></button>
+        <button class="nav-item" data-view="reports"><span class="nav-icon">▥</span><span>Relatórios</span></button>
+        <div class="nav-caption nav-caption-spaced">PRIVACIDADE</div>
+        <button class="nav-item" data-view="credentials"><span class="nav-icon">▣</span><span>Cofre de credenciais</span></button>
+        <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span><span>Configurações</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="local-status"><span class="status-dot"></span><span><b>Modo local</b><small>Dados neste navegador</small></span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button>
+        <div class="topbar-title"><span class="eyebrow" id="topEyebrow">VISÃO GERAL</span><h1 id="pageTitle">Dashboard</h1></div>
+        <div class="topbar-actions">
+          <div class="top-balance"><small>Saldo atual</small><strong id="topBalance">R$ 0,00</strong></div>
+        </div>
+      </header>
+      <section id="viewRoot" class="view-root" aria-live="polite"><div class="app-loading"><span class="loading-spinner" aria-hidden="true"></span><p>Carregando Mercado &amp; Finanças…</p></div></section>
+      <footer class="app-footer">Mercado & Finanças <span>•</span> armazenamento local sem senha</footer>
+    </main>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+  <script src="src/boot.js?v=1.4.0" defer></script>
+</body>
+</html>
